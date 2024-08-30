@@ -44,7 +44,7 @@ function createNote(){
     req.setRequestHeader("Content-Type", "application/json");
     req.addEventListener('load', function() {
         console.log(req);
-        if (req.readyState === 4 && req.status === 200) {
+        if (req.readyState === 4 && req.status === 201) {
             const res = JSON.parse(req.responseText);
             console.log(res);
         } else {
