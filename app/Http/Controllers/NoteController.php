@@ -28,13 +28,12 @@ class NoteController extends Controller
     public function create(Request $request)
     {
         $authId = Auth::id();
-//        $note = Note::create([
-//            'user_id' => $authId,
-//            'title' => $request['title'],
-//            'content' => $request['content'],
-//        ]);
-//        return $note;
-        return $authId;
+        $note = Note::create([
+            'user_id' => $authId,
+            'title' => $request['title'],
+            'content' => $request['content'],
+        ]);
+        return $note;
     }
 
     /**

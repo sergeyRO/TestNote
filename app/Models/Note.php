@@ -10,4 +10,11 @@ class Note extends Model
     use HasFactory;
 
     protected $table = 'notes';
+//    public $timestamps = false;
+
+    protected $fillable = [
+        'user_id',
+        'title',
+        'content',
+    ];
 }
