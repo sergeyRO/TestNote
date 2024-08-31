@@ -78,7 +78,12 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return response()->json(['status'=>'success','id'=>$id, 'title'=>$request['title'], 'content'=>$request['content']]);
+        Note::where('id',$id)->update([
+            'title'=>$request['title'],
+            'content'=>$request['content']
+        ]);
+
+        return response()->json(['status'=>'success', 'id'=> $id]);
     }
 
     /**
